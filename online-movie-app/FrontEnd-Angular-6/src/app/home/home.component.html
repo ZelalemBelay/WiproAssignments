@@ -1,0 +1,47 @@
+<h1 style="font-family: calibri">All Movies</h1>
+<div *ngFor="let movie of movieList">
+  <div style="border: 1px solid #4CAF50; margin-right: 50px;">
+    <div *ngIf="isAdmin" style=" float: right;"><button (click)="updating(movie)"
+        style="background-color: green; color: white">EDIT</button> <button (click)="delete(movie.id)"
+        style="background-color: red;  color: white">DELETE</button></div>
+    <div (click)="movieClick(movie.id)">
+      <div style=" float: left; overflow: auto; height: 100%; margin-right: 5px; border: 1px solid #4CAF50;">
+        <img style="width: 80px; padding: 19px" src="assets/play.png" />
+      </div>
+      <div>
+        <h5 style="font-family: calibri">Movie Title: {{movie.title}}</h5>
+        <h5 style="font-family: calibri">Description: {{movie.description}}</h5>
+      </div>
+
+      <div>
+        <h2 style="font-family: calibri; color: blue">Reviews</h2>
+        <p *ngFor="let rev of movie.reviews"><span><img style="width: 16px;" src="assets/comm.png" /></span>
+          {{rev.review}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="isAdmin">
+  <h1 style="font-family: calibri; color: red">Admin Tools</h1>
+
+  <h1 style="font-family: calibri">All Users in the System</h1>
+
+  <div style="border: 1px solid #4CAF50; margin-right: 50px">
+    <div>
+      <p *ngFor="let user of users"><span><img style="width: 16px;" src="assets/comm.png" /></span>
+        {{user.name}} AGE - {{user.age}}</p>
+    </div>
+  </div>
+
+  <h2 style="font-family: calibri; color: blue">Add/Edit Movie</h2>
+  <form [formGroup]="addMoveForm" (ngSubmit)="submitMovie()">
+    <div>
+      <input type="text" value="{{movieToUpdate.title}}" placeholder="Movie Title" formControlName="title">
+      <br><br>
+    </div>
+    <input type="text" value="{{movieToUpdate.description}}" placeholder="Description" formControlName="description">
+    <br><br>
+    <input type="submit" value="Submit Movie">
+    <br><br>
+  </form>
+</div>

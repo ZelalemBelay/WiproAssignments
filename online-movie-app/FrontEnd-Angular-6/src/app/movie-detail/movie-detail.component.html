@@ -1,0 +1,27 @@
+<h1 style="font-family: calibri">Now Watching - {{movie.title}}</h1>
+<div>
+  <div style="border: 1px solid #4CAF50; margin-right: 50px; padding-left: 50px">
+    <div style="margin-right: 5px; border: 1px solid #4CAF50;">
+      <img style="width: 400px; padding: 19px" src="assets/play.png" />
+    </div>
+    <div>
+      <h4 style="font-family: calibri">Movie Title: {{movie.title}}</h4>
+      <h4 style="font-family: calibri">Description: {{movie.description}}</h4>
+    </div>
+
+    <div>
+      <h3 style="font-family: calibri; color: blue">Reviews</h3>
+      <p *ngFor="let rev of movie.reviews"><span><img style="width: 16px;" src="assets/comm.png" /></span>
+        {{rev.review}}</p>
+    </div>
+    <hr>
+    <div>
+      <form [formGroup]="reviewForm" (ngSubmit)="submit(movie.id)">
+        <br><br>
+        <textarea type="text" style="height: 100px; width:300px" placeholder="Feedback" formControlName="review"> </textarea>
+        <br><br>
+        <input type="submit" value="Submit Review">
+      </form>
+    </div>
+  </div>
+</div>
