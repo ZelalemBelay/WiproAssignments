@@ -13,7 +13,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.user.model.User;
+import com.user.service.SessionValidityRequest;
+import com.user.service.SessionValidityResponse;
 import com.user.service.UserService;
+import com.user.Constants;
 
 @RestController
 public class UserController {
@@ -24,7 +27,7 @@ public class UserController {
 	@GetMapping("/getAllUsers")
 	public ResponseEntity<List<User>> getAllMovies(@RequestHeader String sessionToken) {
 
-		if (sessionToken.equals("admin-session-token-12345-7746-55"))
+		if (sessionToken.equals(Constants.ADMIN_SESSION_TOKEN))
 			return new ResponseEntity<>(this.userService.getAllUsers(), HttpStatus.OK);
 		else
 			return new ResponseEntity<>(HttpStatus.FORBIDDEN);
@@ -43,12 +46,22 @@ public class UserController {
 	public ResponseEntity<User> addReview(@RequestBody User user) {
 		if (this.userService.attemptLogin(user) != null) {
 			if (user.getUsername().contains("admin"))
-				user.setSessionToken("admin-session-token-12345-7746-55");
+				user.setSessionToken(Constants.ADMIN_SESSION_TOKEN);
 			else
-				user.setSessionToken("user-session-token-12345-7746-55");
+				user.setSessionToken(Constants.USER_SESSION_TOKEN);
 			return new ResponseEntity<>(user, HttpStatus.OK);
 		} else
 			return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+	}
+	
+	@PostMapping("/validateSession")
+	public SessionValidityResponse validateSession(@RequestBody SessionValidityRequest request) {
+		//this is a sample validator in real time this data will come from the session factory or database.
+		
+		SessionValidityResponse res = new SessionValidityResponse();
+		res.setActiveToken(Constants.USER_SESSION_TOKEN);
+		
+		return res;
 	}
 
 }
