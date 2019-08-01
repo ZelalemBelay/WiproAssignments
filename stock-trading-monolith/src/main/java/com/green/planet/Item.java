@@ -1,11 +1,11 @@
-package com.stock;
+package com.green.planet;
 
-public class Stock {
+public class Item {
 
 	String ticker;
 	double price;
 	
-	public Stock(String ticker, double price) {
+	public Item(String ticker, double price) {
 		super();
 		this.ticker = ticker;
 		this.price = price;
@@ -37,7 +37,7 @@ public class Stock {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Stock other = (Stock) obj;
+		Item other = (Item) obj;
 		if (ticker == null) {
 			if (other.ticker != null)
 				return false;

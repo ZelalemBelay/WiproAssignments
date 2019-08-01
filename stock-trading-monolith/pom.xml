@@ -8,10 +8,10 @@
 		<version>2.1.6.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.stock</groupId>
-	<artifactId>stock-trading-monolith</artifactId>
+	<groupId>com.green</groupId>
+	<artifactId>green-planet-mgmt-monolith</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>stock-trading-monolith</name>
+	<name>green-planet-mgmt-monolith</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

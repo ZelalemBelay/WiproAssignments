@@ -1,4 +1,4 @@
-package com.stock;
+package com.green.planet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,9 +8,45 @@ public class User {
 	String name;
 	String username;
 	String password;
+	String mobileNum;
+	String blockNum;
+	String houseNum;
+	String floorNum;
 	
+	public String getMobileNum() {
+		return mobileNum;
+	}
+
+	public void setMobileNum(String mobileNum) {
+		this.mobileNum = mobileNum;
+	}
+
+	public String getBlockNum() {
+		return blockNum;
+	}
+
+	public void setBlockNum(String blockNum) {
+		this.blockNum = blockNum;
+	}
+
+	public String getHouseNum() {
+		return houseNum;
+	}
+
+	public void setHouseNum(String houseNum) {
+		this.houseNum = houseNum;
+	}
+
+	public String getFloorNum() {
+		return floorNum;
+	}
+
+	public void setFloorNum(String floorNum) {
+		this.floorNum = floorNum;
+	}
+
 	double balance;
-	List<Stock> stocks = new ArrayList<Stock>();
+	List<Item> items = new ArrayList<Item>();
 
 	
 	public User(String username, String password) {
@@ -51,12 +87,13 @@ public class User {
 		this.password = password;
 	}
 
-	public List<Stock> getStocks() {
-		return stocks;
+
+	public List<Item> getItems() {
+		return items;
 	}
 
-	public void setStocks(List<Stock> stocks) {
-		this.stocks = stocks;
+	public void setItems(List<Item> items) {
+		this.items = items;
 	}
 
 	@Override
