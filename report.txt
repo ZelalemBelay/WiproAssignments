@@ -165,3 +165,4 @@ WARNING: All illegal access operations will be denied in a future release
 [2m2019-08-07 00:47:42.882[0;39m [32m INFO[0;39m [35m108380[0;39m [2m---[0;39m [2m[nio-8084-exec-1][0;39m [36mo.s.web.servlet.DispatcherServlet       [0;39m [2m:[0;39m Completed initialization in 25 ms
 [2m2019-08-07 00:48:15.454[0;39m [32m INFO[0;39m [35m108380[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
 [2m2019-08-07 00:53:15.366[0;39m [32m INFO[0;39m [35m108380[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
+[2m2019-08-07 00:58:15.332[0;39m [32m INFO[0;39m [35m108380[0;39m [2m---[0;39m [2m[trap-executor-0][0;39m [36mc.n.d.s.r.aws.ConfigClusterResolver     [0;39m [2m:[0;39m Resolving eureka endpoints via configuration
