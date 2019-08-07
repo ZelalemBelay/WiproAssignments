@@ -1,44 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>StockTrading</title>
 </head>
 <body>
-
-<h2>Available Stocks</h2>
-<table style="width:100%">
-  <tr>
-   <td>TICKER --- </td>
-    <td>WIPRO</td>
-    <td>INFY</td> 
-    <td>TCS</td>
-    <td>TECHM</td>
-  </tr>
-  <tr>
-    <td>PRICE ---</td>
-    <td>230.55</td>
-    <td>949.44</td> 
-    <td>335.65</td>
-    <td>560.87</td>
-  </tr>
-</table>
-
-	<form action="purchaseStock">
-		TICKER 
-		<br>
-		<input type="text" name="ticker"> 
-		<br>
-		<br>
-		QUANTITY
-		<br>
-		<input type="text" name="quantity"> 
-		<br>
-		<br>
-		<input type="submit" value="BUY">
-
-	</form>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9">
+				<h2>Welcome to Planet Green</h2>
+				<img style="width: 1000px; heignt: 800px" alt="Company Logo"
+					src="https://www.lamotte.fr/sites/default/files/assets/images/appartement-neuf-nantes-passage-saint-felix.jpg">
+				<div style="margin-top: 20px" class="row ">
+					<div>
+						<a style="margin: 30px"  class="btn btn-info"  href="buySeeds"> Buy Plants/Seeds </a>
+						<a style="margin: 30px"  class="btn btn-info" href="buyVessels"> Buy earthen vessels </a>
+						<a style="margin: 30px"  class="btn btn-info" href="viewBalance"> View transactions and balance </a>
+					
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>

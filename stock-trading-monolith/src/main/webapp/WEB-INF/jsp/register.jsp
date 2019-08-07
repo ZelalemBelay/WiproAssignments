@@ -26,14 +26,14 @@
 					src="https://www.lamotte.fr/sites/default/files/assets/images/appartement-neuf-nantes-passage-saint-felix.jpg">
 				<div class="col-sm-10 text-center" style="margin-top: 20px">
 					<form action="registerUser">
-					    <input class="form-control" type="text"	placeholder="Email Address" name="email"> <br>
+					    <input class="form-control" type="text"	placeholder="Email Address" name="email"><br>
 						<input class="form-control"	type="password" placeholder="Password" name="password"> <br>
-						<input type="text" placeholder="Mobile Number" class="form-control" name="mobile"> <br> 
+						<input type="text" placeholder="Mobile Number" class="form-control" name="mobileNum"> <br> 
 						<input type="text" placeholder="Block Number" class="form-control" name="blockNum"> <br> 
 						<input type="text" placeholder="Floor Number" class="form-control" name="floorNum"> <br> 
 						<input type="text" placeholder="House Number" class="form-control" name="houseNum"> <br> 
 						 
-						
+						 <h6 style="color:red"> ${error}</h6>
 						<input class="btn-success btn-lg" style="width: 200px" type="submit" value="Register">
 					</form>
 				</div>

@@ -24,10 +24,11 @@
 				<img style="width: 800px; heignt: 400px" alt="Company Logo"
 					src="https://www.lamotte.fr/sites/default/files/assets/images/appartement-neuf-nantes-passage-saint-felix.jpg">
 				<div class="col-sm-10 text-center" style="margin-top: 20px">
-					<form action="Login">
+					<form action="userLogin">
 					    <input class="form-control" type="text"	placeholder="Email Address" name="email"> <br>
 						<input class="form-control"	type="password" placeholder="Password" name="password"> <br>
 						
+						<div style="color:red"><h6> ${errorMessage}</h6></div>
 						<input class="btn-success btn-lg" style="width: 200px" type="submit" value="Login">
 					</form>
 				</div>

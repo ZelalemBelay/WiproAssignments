@@ -3,16 +3,31 @@ package com.green.planet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
 public class User {
 
+	@Id
+	@GeneratedValue
+	int id;
+	
 	String name;
-	String username;
+	String email;
 	String password;
 	String mobileNum;
 	String blockNum;
 	String houseNum;
 	String floorNum;
 	
+	
+	public User() {
+		super();
+	}
+
 	public String getMobileNum() {
 		return mobileNum;
 	}
@@ -46,12 +61,13 @@ public class User {
 	}
 
 	double balance;
+	@OneToMany
 	List<Item> items = new ArrayList<Item>();
 
 	
-	public User(String username, String password) {
+	public User(String email, String password) {
 		super();
-		this.username = username;
+		this.email = email;
 		this.password = password;
 	}
 
@@ -71,13 +87,6 @@ public class User {
 		this.name = name;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 	public String getPassword() {
 		return password;
@@ -87,6 +96,13 @@ public class User {
 		this.password = password;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 
 	public List<Item> getItems() {
 		return items;
@@ -96,6 +112,7 @@ public class User {
 		this.items = items;
 	}
 
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -105,19 +122,26 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (id != other.id)
+			return false;
 		if (password == null) {
 			if (other.password != null)
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
-		if (username == null) {
-			if (other.username != null)
-				return false;
-		} else if (!username.equals(other.username))
-			return false;
 		return true;
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", mobileNum="
+				+ mobileNum + ", blockNum=" + blockNum + ", houseNum=" + houseNum + ", floorNum=" + floorNum
+				+ ", balance=" + balance + ", items=" + items + "]";
+	}
+
 }
